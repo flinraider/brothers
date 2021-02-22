@@ -1,0 +1,15 @@
+@charset "UTF-8";
+@font-face {
+
+}
+h2{
+  position: relative;
+  margin: auto;
+  text-align: center;
+}
+
+form{
+  position: relative;
+  margin: auto;
+  width: 900px;
+}

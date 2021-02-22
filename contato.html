@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="css/form.css">
+    <title>contato</title>
+    <script>
+       function calc_total() {
+         var qtd = parseInt(document.getElementById('cQtd').value);
+          tot = qtd * 2100;
+          document.getElementById('cTot').value = tot;
+       }
+    </script>
+  </head>
+  <body>
+      <h2>Fale Conosco</h2>
+      <form id="fContato" action="mailto:contato@consoletech.com.br" method="post" oninput="calc_total();">
+        <fieldset id="usuario"><legend>Identificação do Usúario</legend>
+          <p><label for="cNome">Nome:</label></p>
+        <input type="text" name="tNome" id="cNome" size="30" maxlength="30" placeholder="Nome Completo">
+        <p><label for="cSenha">Senha:</label></p>
+        <input type="password" name="tSenha" id="cSenha" size="10" maxlength="10" placeholder="10 dígitos">
+        <p><label for="cMail">Email:</label></p>
+        <input type="email" name="tMail" id="cMail" size="30" maxlength="40">
+        </fieldset>
+        <fieldset id="sexo"><legend>Sexo</legend>
+              <input type="radio" name="tSexo" id="cMasc" checked><label for="cMasc">Masculino</label><br>
+              <input type="radio" name="tSexo" id="cFem"><label for="cFem">Feminino</label><br>
+        </fieldset>
+        <fieldset>
+          <p><label for="cNasc">Data de Nascimento:</label></p>
+          <input type="date" name="tNasc" id="cNasc">
+        </fieldset>
+        <fieldset id="endereco"><legend>Endereço do Usúario</legend>
+          <p><label for="cRua">Logradouro:</label></p>
+          <input type="text" name="tRua" id="cRua" size="30" maxlength="80" placeholder="Rua, Av, Travessa ...">
+          <p><label for="cNum">Número</label>
+          <input type="number" name="tNum" id="cNum" min="1" max="99999"></p>
+          <p><label for="cEst">Estado:</label></p>
+          <select id="cEst" name="tEst">
+            <optgroup label="Região Sudeste">
+                <option value="SP'">São Paulo</option>
+                <option value="RJ">Rio de Janeiro</option>
+                <option value="ES">Espírito Santo</option>
+                <option value="MG">Minas Gerais</option>
+            </optgroup>
+            <optgroup label="Região Sul">
+                <option value="PR">Paraná</option>
+                <option value="SC">Santa Catarina</option>
+                <option value="RS">Rio Grande do Sul</option>
+            </optgroup>
+          </select>
+          <p><label for="cCid">Cidade:</label></p>
+          <input type="text" name="tCid" id="cCid" size="30" maxlength="30" placeholder="Sua Cidade"  list="cidades">
+          <datalist id="cidades">
+                 <option value="Rio de Janeiro"></option>
+                 <option value="Niteroi"></option>
+                 <option value="São Paulo"></option>
+                 <option value="Limeira"></option>
+          </datalist>
+        </fieldset>
+        <fieldset id="mensagem"><legend>Mensagem do usúario</legend>
+             <p><label for="cUrg">Grau de Urgência:</label>
+             Mín<input type="range" name="tUrg" id="cUrg" min="0" max="10" step="2" >Máx</p>
+             <p><label for="cMsg">Mensagem:</label></p>
+             <textarea name="tMsg" id="cMsg" rows="8" cols="80"></textarea>
+        </fieldset>
+        <fieldset id="pedido"><legend>Quero um DELL</legend>
+            <p><input type="checkbox" name="tPed" id="cPed">
+            <label for="cPed">Gostaria de um DELL Optiplex Quando Disponível</label></p>
+            <p><label for="cCor">Cor:</label>
+            <input type="color" name="tCor" id="cCor" value="#300a0a"></p>
+            <p><label for="cQtd">Qauntidade:</label>
+            <input type="number" name="tQtd" id="cQtd" min="0" max="5" value="0"></p>
+            <p><label for="cTot">Preço Total:  R$</label>
+            <input type="text" name="tTot" id="cTot"  placeholder="Total a págar" readonly></p>
+        </fieldset>
+          <input type="submit" name="" value="Enviar">
+      </form>
+  </body>
+</html>
